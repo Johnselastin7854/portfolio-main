@@ -183,6 +183,7 @@ textarea {
   font-weight: var(--font-bold);
   max-width: 2rem;
 }
+
 .nav__list {
   display: flex;
   gap: 3rem;
@@ -200,6 +201,7 @@ textarea {
   padding: 1rem;
   border-radius: 50px;
   transform-origin: center;
+  color: var(--hover-color);
 }
 .nav__open,
 .nav__close {
@@ -213,12 +215,13 @@ textarea {
   margin-block: 15rem;
   padding-inline: 4rem;
   font-family: var(--font-heading);
-  height: 80vh;
+  /* height: 80vh; */
 }
 .hero__title {
   line-height: 0.5;
   color: var(--dark-secondary);
   vertical-align: baseline;
+  font-size-adjust: 0.5;
 }
 .mobile {
   display: none;

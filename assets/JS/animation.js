@@ -32,24 +32,28 @@ mm.add("(max-width: 768px)", () => {
     y: -40,
     opacity: 0,
   });
+
   tl.pause();
   open.addEventListener("click", () => {
     tl.play();
+    close.style.display = "block";
   });
   close.addEventListener("click", () => {
     tl.reverse();
+    close.style.display = "none";
   });
 });
 
+mm.add("(min-width: 769px)", () => {});
 /*<!--==================== Hero Title Animation ====================--> */
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.create({
   trigger: ".home__hero",
-  start: "-30% 5%",
-  end: "15%% -15%",
+  start: "-32% 1%",
+  end: "15% -15%",
   // end: "+=500",
-  markers: true,
+  // markers: true,
   onUpdate: (self) => {
     const progress = self.progress;
     console.log(progress);
@@ -70,3 +74,30 @@ ScrollTrigger.create({
     });
   },
 });
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   tl.from(".nav", {
+//     y: -70,
+//     opacity: 1,
+//     durarion: 0.8,
+//   });
+
+tl.from(".hero__title--top.desktop", {
+  y: 70,
+  opacity: 0,
+  duration: 0.6,
+});
+
+tl.from(".bottom__left.desktop ", {
+  y: 50,
+  opacity: 0,
+
+  duration: 0.6,
+});
+tl.from(".bottom__right ", {
+  y: 50,
+  rotate: 360,
+  opacity: 0,
+  duration: 0.5,
+});
+// });
