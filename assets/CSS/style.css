@@ -169,7 +169,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5.6rem;
+  height: 7rem;
   font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 800;
@@ -218,7 +218,7 @@ textarea {
 /*========== Home Hero Section ==========*/
 .home__hero {
   margin-top: 8rem;
-  padding-inline: 4rem;
+  padding-inline: 5rem;
   font-family: var(--font-heading);
 }
 .hero__title {
@@ -310,6 +310,6 @@ span {
 }
 
 /*========== About Section ==========*/
-/* .section_about {
+.section__about {
   background-color: var(--dark-main);
-} */
+}
