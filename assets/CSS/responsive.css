@@ -46,8 +46,8 @@
   .nav__close {
     display: block;
     position: absolute;
-    top: 4%;
-    right: 3%;
+    top: 7%;
+    right: 4%;
     background-color: var(--gray-2);
     font-size: 2rem;
     cursor: pointer;
@@ -73,7 +73,7 @@
     font-size-adjust: 0.7;
   }
   .home__hero {
-    margin-block: 5rem;
+    margin-top: 5rem;
   }
 }
 

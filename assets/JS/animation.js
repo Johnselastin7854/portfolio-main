@@ -16,7 +16,6 @@ const close = document.querySelector(".nav__close");
 const navList = document.querySelector(".nav__list");
 const heroTitleTopDesktop = document.querySelector(".hero__title .desktop");
 const heroTitleBottomDesktop = document.querySelector(".bottom__left");
-console.log(heroTitleBottomDesktop);
 
 gsap.set(heroTitleBottomDesktop, {
   opacity: 1,
@@ -92,7 +91,6 @@ mm.add("(min-width: 769px)", () => {
   };
 });
 
-/**/
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.create({
@@ -103,7 +101,6 @@ ScrollTrigger.create({
   // markers: true,
   onUpdate: (self) => {
     const progress = self.progress;
-    console.log(progress);
 
     gsap.to(".hero__title--left", {
       x: -progress * 200,
