@@ -221,7 +221,7 @@ textarea {
   line-height: 0.5;
   color: var(--dark-secondary);
   vertical-align: baseline;
-  font-size-adjust: 0.5;
+  font-size-adjust: 0.7;
 }
 .mobile {
   display: none;
@@ -258,7 +258,7 @@ span {
   letter-spacing: -0.105em;
   font-size: 28rem;
   word-break: break-word;
-  transform: scaleX(1.05);
+  /* transform: scaleX(1.05); */
 }
 .tablet {
   display: none;
