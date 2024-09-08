@@ -43,6 +43,12 @@ mm.add("(max-width: 768px)", () => {
     y: -40,
     opacity: 0,
   });
+  gsap.from(".home__hero .mobile", {
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    delay: 0.4,
+  });
 
   mobileTl.pause();
 

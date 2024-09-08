@@ -135,7 +135,7 @@ textarea {
   padding-block: 8rem 1.6rem;
 }
 .section-1 {
-  padding-block: 4rem 1rem;
+  padding-block: 6rem;
 }
 .grid {
   display: grid;
@@ -218,6 +218,7 @@ textarea {
 /*========== Home Hero Section ==========*/
 .home__hero {
   margin-top: 8rem;
+  margin-bottom: 5rem;
   padding-inline: 5rem;
   font-family: var(--font-heading);
 }
@@ -310,6 +311,30 @@ span {
 }
 
 /*========== About Section ==========*/
-.section__about {
+#about {
   background-color: var(--dark-main);
+}
+.section__about {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 15rem;
+}
+.section__about--left img {
+  border-radius: 10px;
+}
+.section__about--right {
+  color: var(--gray-main);
+  font-family: var(--font-secondary);
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  font-size: 1.8rem;
+  max-width: 500px;
+  align-self: center;
+  justify-self: center;
+  line-height: 1.5;
+}
+.section__about--right span {
+  color: var(--gray-2);
+  font-weight: 500;
 }
