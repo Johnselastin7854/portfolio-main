@@ -11,14 +11,18 @@
 @media (max-width: 1200px) {
   .section__about {
     flex-direction: column;
-    gap: 10rem;
+    gap: 2rem;
+  }
+  .section__about--right p {
+    word-break: word-break;
   }
   .section__about--right {
     flex-direction: row;
-    justify-content: space-evenly;
-    /* justify-self: space-evenly; */
-    align-self: start;
-    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 2vw;
+    gap: 1rem;
   }
 }
 

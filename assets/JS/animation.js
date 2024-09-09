@@ -98,7 +98,6 @@ mm.add("(min-width: 769px)", () => {
 });
 
 gsap.registerPlugin(ScrollTrigger);
-
 ScrollTrigger.create({
   trigger: ".home__hero",
   start: "-32% 1%",
@@ -124,3 +123,62 @@ ScrollTrigger.create({
     });
   },
 });
+
+function aboutSectionAnimation() {
+  let am = gsap.matchMedia();
+  am.add("(max-width: 992px)", () => {
+    let tl1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 20%",
+        end: "30% 100%",
+      },
+    });
+    tl1.from(".section__about--left", {
+      x: -300,
+      opacity: 0,
+      duration: 0.5,
+    });
+    tl1.from(".section__about--right .one", {
+      y: 300,
+      delay: 0.7,
+      opacity: 0,
+    });
+    tl1.from(".section__about--right .two", {
+      y: 300,
+      opacity: 0,
+    });
+    tl1.from(".section__about--right .three", {
+      y: 300,
+      opacity: 0,
+    });
+  });
+
+  am.add("(min-width: 993px)", () => {
+    let tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        start: "-40% 20%",
+        end: "30% 100%",
+      },
+    });
+    tl2.from(".section__about--left", {
+      x: -300,
+      opacity: 0,
+      duration: 0.5,
+    });
+    tl2.from(".section__about--right .one", {
+      x: 300,
+      opacity: 0,
+    });
+    tl2.from(".section__about--right .two", {
+      x: 300,
+      opacity: 0,
+    });
+    tl2.from(".section__about--right .three", {
+      x: 300,
+      opacity: 0,
+    });
+  });
+}
+aboutSectionAnimation();
