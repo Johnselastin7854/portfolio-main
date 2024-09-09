@@ -16,7 +16,6 @@ const close = document.querySelector(".nav__close");
 const navList = document.querySelector(".nav__list");
 const heroTitleTopDesktop = document.querySelector(".hero__title .desktop");
 const heroTitleBottomDesktop = document.querySelector(".bottom__left");
-console.log(heroTitleBottomDesktop);
 
 gsap.set(heroTitleBottomDesktop, {
   opacity: 1,
@@ -43,6 +42,12 @@ mm.add("(max-width: 768px)", () => {
   mobileTl.from(close, {
     y: -40,
     opacity: 0,
+  });
+  gsap.from(".home__hero .mobile", {
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    delay: 0.4,
   });
 
   mobileTl.pause();
@@ -92,9 +97,7 @@ mm.add("(min-width: 769px)", () => {
   };
 });
 
-/**/
 gsap.registerPlugin(ScrollTrigger);
-
 ScrollTrigger.create({
   trigger: ".home__hero",
   start: "-32% 1%",
@@ -103,7 +106,6 @@ ScrollTrigger.create({
   // markers: true,
   onUpdate: (self) => {
     const progress = self.progress;
-    console.log(progress);
 
     gsap.to(".hero__title--left", {
       x: -progress * 200,
@@ -121,3 +123,62 @@ ScrollTrigger.create({
     });
   },
 });
+
+function aboutSectionAnimation() {
+  let am = gsap.matchMedia();
+  am.add("(max-width: 992px)", () => {
+    let tl1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 20%",
+        end: "30% 100%",
+      },
+    });
+    tl1.from(".section__about--left", {
+      x: -300,
+      opacity: 0,
+      duration: 0.5,
+    });
+    tl1.from(".section__about--right .one", {
+      y: 300,
+      delay: 0.7,
+      opacity: 0,
+    });
+    tl1.from(".section__about--right .two", {
+      y: 300,
+      opacity: 0,
+    });
+    tl1.from(".section__about--right .three", {
+      y: 300,
+      opacity: 0,
+    });
+  });
+
+  am.add("(min-width: 993px)", () => {
+    let tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        start: "-40% 20%",
+        end: "30% 100%",
+      },
+    });
+    tl2.from(".section__about--left", {
+      x: -300,
+      opacity: 0,
+      duration: 0.5,
+    });
+    tl2.from(".section__about--right .one", {
+      x: 300,
+      opacity: 0,
+    });
+    tl2.from(".section__about--right .two", {
+      x: 300,
+      opacity: 0,
+    });
+    tl2.from(".section__about--right .three", {
+      x: 300,
+      opacity: 0,
+    });
+  });
+}
+aboutSectionAnimation();
