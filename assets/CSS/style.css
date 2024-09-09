@@ -33,13 +33,12 @@
   font-weight: 700;
   src: url("../fonts/Sofia\ Pro\ Bold\ Az.otf") format("woff2");
 }
-/* bebas-neue-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/bebas-neue-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/bebas-neue-v14-latin-regular.woff2") format("woff2");
 }
 :root {
   /*========== Colors ==========*/
@@ -338,7 +337,20 @@ span {
   align-self: center;
   line-height: 1.5;
 }
-.section__about--right span {
-  color: var(--gray-2);
-  font-weight: 500;
+
+.download {
+  color: #fff;
+  padding: 1.5rem 2.5rem;
+  border: 1px solid var(--gray-main);
+  border-radius: 45px;
+  cursor: pointer;
+  font-weight: var(--font-medium);
+  font-size: inherit;
+  transition: all 0.3s ease;
+}
+
+.download:hover {
+  background-color: var(--hover-color);
+  border-color: transparent;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
