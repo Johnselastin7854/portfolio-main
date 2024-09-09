@@ -221,6 +221,7 @@ textarea {
   margin-bottom: 5rem;
   padding-inline: 5rem;
   font-family: var(--font-heading);
+  overflow: hidden;
 }
 .hero__title {
   line-height: 0.9;
@@ -243,7 +244,7 @@ textarea {
 .hero__title--left {
   display: inline-block;
   letter-spacing: -1.68rem;
-  font-size: 28rem;
+  font-size: 20vw;
   transform: translateX(0);
   word-break: break-word;
 }
@@ -261,7 +262,7 @@ span {
   display: inline-block;
   will-change: transform;
   letter-spacing: -0.105em;
-  font-size: 28rem;
+  font-size: 20vw;
   word-break: break-word;
   /* transform: scaleX(1.05); */
 }
@@ -272,7 +273,7 @@ span {
   display: inline-block;
   letter-spacing: -1.68rem;
   word-break: break-word;
-  font-size: 28rem;
+  font-size: 20vw;
 }
 .hero__title--bottom .overflow {
   display: inline-flex;
@@ -291,7 +292,7 @@ span {
 .bottom__left {
   flex-shrink: 0;
   letter-spacing: -1.68rem;
-  font-size: 28rem;
+  font-size: 20vw;
   word-break: break-word;
 }
 .bottom__right {
@@ -313,14 +314,19 @@ span {
 /*========== About Section ==========*/
 #about {
   background-color: var(--dark-main);
+  padding-inline: 3rem;
 }
 .section__about {
   display: flex;
-  /* justify-content: space-between; */
   gap: 15rem;
+}
+.section__about--left {
+  flex-shrink: 0;
+  align-self: center;
 }
 .section__about--left img {
   border-radius: 10px;
+  max-width: 500px;
 }
 .section__about--right {
   color: var(--gray-main);
@@ -331,7 +337,6 @@ span {
   font-size: 1.8rem;
   max-width: 500px;
   align-self: center;
-  justify-self: center;
   line-height: 1.5;
 }
 .section__about--right span {
