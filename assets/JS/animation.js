@@ -1,5 +1,13 @@
-/**/
-// const cursor = document.getElementById("cursor");
+// Seclected Elements
+const open = document.querySelector(".nav__open");
+const close = document.querySelector(".nav__close");
+const navList = document.querySelector(".nav__list");
+const heroTitleTopDesktop = document.querySelector(".hero__title .desktop");
+const heroTitleBottomDesktop = document.querySelector(".bottom__left");
+const cursor = document.getElementById("cursor");
+const line = document.querySelector(".line");
+const skillsSection = document.getElementById("skills");
+const skills = skillsSection.querySelectorAll(".skill");
 
 // document.addEventListener("mousemove", (e) => {
 //   gsap.to(cursor, {
@@ -11,119 +19,128 @@
 // });
 
 /**/
-const open = document.querySelector(".nav__open");
-const close = document.querySelector(".nav__close");
-const navList = document.querySelector(".nav__list");
-const heroTitleTopDesktop = document.querySelector(".hero__title .desktop");
-const heroTitleBottomDesktop = document.querySelector(".bottom__left");
 
-gsap.set(heroTitleBottomDesktop, {
-  opacity: 1,
-});
-gsap.set(heroTitleTopDesktop, {
-  opacity: 1,
+document.addEventListener("DOMContentLoaded", () => {
+  navigationSectionAnimation();
+  heroSectionAnimation();
+  aboutSectionAnimation();
+  lineAnimation();
+  skillSectionAnimation();
 });
 
-let mm = gsap.matchMedia();
-
-mm.add("(max-width: 768px)", () => {
-  const mobileTl = gsap.timeline();
-
-  mobileTl.to(".nav__list", {
-    right: 0,
-    duration: 0.6,
-  });
-  mobileTl.from(".nav__list--item", {
-    x: 150,
-    opacity: 0,
-    duration: 0.7,
-    stagger: 0.25,
-  });
-  mobileTl.from(close, {
-    y: -40,
-    opacity: 0,
-  });
-  gsap.from(".home__hero .mobile", {
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    delay: 0.4,
-  });
-
-  mobileTl.pause();
-
-  open.addEventListener("click", () => {
-    mobileTl.play();
-    navList.style.display = "flex";
-  });
-  close.addEventListener("click", () => {
-    mobileTl.reverse();
-  });
-
-  return () => {
-    mobileTl.kill();
-  };
-});
-
-mm.add("(min-width: 769px)", () => {
-  const desktopTl = gsap.timeline();
-
-  desktopTl.from(".nav", {
-    y: -70,
+// Navigation section animation
+function navigationSectionAnimation() {
+  gsap.set(heroTitleBottomDesktop, {
     opacity: 1,
-    durarion: 0.8,
   });
-  desktopTl.from(".hero__title--top.desktop", {
-    y: 70,
-    opacity: 0,
-    duration: 0.6,
+  gsap.set(heroTitleTopDesktop, {
+    opacity: 1,
   });
 
-  desktopTl.from(".bottom__left.desktop", {
-    y: 50,
-    opacity: 0,
-    duration: 0.6,
-  });
+  let mm = gsap.matchMedia();
 
-  desktopTl.from(".bottom__right", {
-    y: 50,
-    rotate: 360,
-    opacity: 0,
-    duration: 0.5,
-  });
+  mm.add("(max-width: 768px)", () => {
+    const mobileTl = gsap.timeline();
 
-  return () => {
-    desktopTl.kill();
-  };
-});
-
-gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.create({
-  trigger: ".home__hero",
-  start: "-32% 1%",
-  end: "15% -15%",
-  // end: "+=500",
-  // markers: true,
-  onUpdate: (self) => {
-    const progress = self.progress;
-
-    gsap.to(".hero__title--left", {
-      x: -progress * 200,
+    mobileTl.to(".nav__list", {
+      right: 0,
+      duration: 0.6,
+    });
+    mobileTl.from(".nav__list--item", {
+      x: 150,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.25,
+    });
+    mobileTl.from(close, {
+      y: -40,
+      opacity: 0,
+    });
+    gsap.from(".home__hero .mobile", {
+      y: 40,
+      opacity: 0,
       duration: 0.8,
+      delay: 0.4,
     });
 
-    gsap.to("#line", {
-      scaleX: progress * 2 + 1,
-      duration: 0.8,
+    mobileTl.pause();
+
+    open.addEventListener("click", () => {
+      mobileTl.play();
+      navList.style.display = "flex";
+    });
+    close.addEventListener("click", () => {
+      mobileTl.reverse();
     });
 
-    gsap.to(".hero__title--right", {
-      x: progress * 200,
-      duration: 0.8,
-    });
-  },
-});
+    return () => {
+      mobileTl.kill();
+    };
+  });
 
+  mm.add("(min-width: 769px)", () => {
+    const desktopTl = gsap.timeline();
+
+    desktopTl.from(".nav", {
+      y: -70,
+      opacity: 1,
+      durarion: 0.8,
+    });
+    desktopTl.from(".hero__title--top.desktop", {
+      y: 70,
+      opacity: 0,
+      duration: 0.6,
+    });
+
+    desktopTl.from(".bottom__left.desktop", {
+      y: 50,
+      opacity: 0,
+      duration: 0.6,
+    });
+
+    desktopTl.from(".bottom__right", {
+      y: 50,
+      rotate: 360,
+      opacity: 0,
+      duration: 0.5,
+    });
+
+    return () => {
+      desktopTl.kill();
+    };
+  });
+}
+// Hero Section Animation
+function heroSectionAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.create({
+    trigger: ".home__hero",
+    start: "-32% 1%",
+    end: "15% -15%",
+    // end: "+=500",
+    // markers: true,
+    onUpdate: (self) => {
+      const progress = self.progress;
+
+      gsap.to(".hero__title--left", {
+        x: -progress * 200,
+        duration: 0.8,
+      });
+
+      gsap.to("#line", {
+        scaleX: progress * 1.2 + 1,
+        duration: 0.8,
+      });
+
+      gsap.to(".hero__title--right", {
+        x: progress * 200,
+        duration: 0.8,
+      });
+    },
+  });
+}
+
+//  About Section Animation
 function aboutSectionAnimation() {
   let am = gsap.matchMedia();
   am.add("(max-width: 992px)", () => {
@@ -149,6 +166,10 @@ function aboutSectionAnimation() {
       opacity: 0,
     });
     tl1.from(".section__about--right .three", {
+      y: 300,
+      opacity: 0,
+    });
+    tl1.from(".section__about--right  a", {
       y: 300,
       opacity: 0,
     });
@@ -179,6 +200,62 @@ function aboutSectionAnimation() {
       x: 300,
       opacity: 0,
     });
+    tl2.from(".section__about--right  a", {
+      x: 300,
+      opacity: 0,
+    });
   });
 }
-aboutSectionAnimation();
+
+// Skills Section Animation
+function skillSectionAnimation() {
+  gsap.set(skills, { opacity: 0, x: -100 });
+
+  skills.forEach((skill, index) => {
+    gsap.to(skill, {
+      opacity: 1,
+      x: 0,
+      delay: index * 0.2,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: skillsSection,
+        start: "50& 80%",
+        end: "top 80%",
+      },
+    });
+  });
+}
+
+// line Animation
+function lineAnimation() {
+  gsap.from(".line", {
+    x: -500,
+    opacity: 0,
+    durarion: 0.5,
+    scrollTrigger: {
+      trigger: ".line__container",
+      start: "top 80%",
+      end: "bottom 80%",
+    },
+  });
+}
+
+// Project section animation
+
+function projectAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  let projects = gsap.utils.toArray(".projects");
+  console.log(projects);
+  projects.forEach((project, i) => {
+    ScrollTrigger.create({
+      trigger: project,
+      start: "top top",
+      pin: i === projects.length - 1 ? false : true,
+      // end: "bottom 100",
+      pinSpacing: false,
+      // markers: true,
+    });
+  });
+}
+projectAnimation();
