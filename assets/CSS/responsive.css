@@ -74,4 +74,19 @@
   .home__hero {
     margin-top: 5rem;
   }
+  .projects {
+    flex-direction: column;
+    height: 100vh;
+    gap: 1rem;
+  }
+  .projects.light {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel {
+    width: 300px;
+    height: 250px;
+  }
 }
