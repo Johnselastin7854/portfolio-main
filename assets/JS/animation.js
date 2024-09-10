@@ -239,3 +239,23 @@ function lineAnimation() {
     },
   });
 }
+
+// Project section animation
+
+function projectAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  let projects = gsap.utils.toArray(".projects");
+  console.log(projects);
+  projects.forEach((project, i) => {
+    ScrollTrigger.create({
+      trigger: project,
+      start: "top top",
+      pin: i === projects.length - 1 ? false : true,
+      // end: "bottom 100",
+      pinSpacing: false,
+      // markers: true,
+    });
+  });
+}
+projectAnimation();

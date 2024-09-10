@@ -427,3 +427,127 @@ span {
 .skill:hover {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
+
+/*========== Project Section ==========*/
+#project {
+  background-color: var(--dark-main);
+}
+.dark {
+  background-color: var(--dark-main);
+}
+.light {
+  background-color: white;
+}
+.projects {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* font-weight: 600; */
+  /* font-size: 1.5em; */
+  /* text-align: center; */
+  position: relative;
+  /* box-sizing: border-box; */
+  /* padding: 10px; */
+}
+
+.projects__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.project__left--title {
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: var(--hover-color);
+  font-family: var(--font-secondary);
+}
+.project__left--description {
+  max-width: 500px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--gray-3);
+}
+.projects.light {
+  flex-direction: row-reverse;
+  color: black;
+}
+.light .project__left--description {
+  color: var(--dark-main);
+}
+.project__left--tech span {
+  font-weight: var(--font-bold);
+  margin-right: 0.8rem;
+}
+.project__left--tech {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.project__left--button {
+  display: flex;
+  justify-content: space-between;
+}
+.project__left--button a {
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  padding: 1rem 1.5rem;
+}
+.project__left--button a:hover {
+  border: 2px solid var(--hover-color);
+  border-radius: 55px;
+}
+.projects__right img {
+  border-radius: 10px;
+}
+
+/* Carousel */
+
+.carousel {
+  position: relative;
+  width: 450px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-medium);
+  color: var(--gray-3);
+  background-color: var(--dark-secondary);
+}
+
+.carousel-control.prev {
+  left: 0;
+}
+
+.carousel-control.next {
+  right: 0;
+}
