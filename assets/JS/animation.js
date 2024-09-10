@@ -5,6 +5,8 @@ const navList = document.querySelector(".nav__list");
 const heroTitleTopDesktop = document.querySelector(".hero__title .desktop");
 const heroTitleBottomDesktop = document.querySelector(".bottom__left");
 const cursor = document.getElementById("cursor");
+const skills = document.querySelector(".skills");
+const line = document.querySelector(".line");
 
 // document.addEventListener("mousemove", (e) => {
 //   gsap.to(cursor, {
@@ -21,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   navigationSectionAnimation();
   heroSectionAnimation();
   aboutSectionAnimation();
+  lineAnimation();
+  // skillSectionAnimation();
 });
 
 // Navigation section animation
@@ -123,7 +127,7 @@ function heroSectionAnimation() {
       });
 
       gsap.to("#line", {
-        scaleX: progress * 2 + 1,
+        scaleX: progress * 1.2 + 1,
         duration: 0.8,
       });
 
@@ -199,5 +203,42 @@ function aboutSectionAnimation() {
       x: 300,
       opacity: 0,
     });
+  });
+}
+
+// Skills Section Animation
+function skillSectionAnimation() {
+  function getScrollAmount() {
+    let racesWidth = skills.scrollWidth;
+    return -(racesWidth - window.innerWidth);
+  }
+
+  const tween = gsap.to(skills, {
+    x: getScrollAmount,
+    duration: 3,
+    ease: "none",
+  });
+
+  ScrollTrigger.create({
+    trigger: ".skills__wrapper",
+    start: "top 20%",
+    end: () => `+=${getScrollAmount() * -1}`,
+    pin: true,
+    animation: tween,
+    scrub: 1,
+    invalidateOnRefresh: true,
+  });
+}
+
+function lineAnimation() {
+  gsap.from(".line", {
+    x: -500,
+    opacity: 0,
+    durarion: 0.5,
+    scrollTrigger: {
+      trigger: ".line__container",
+      start: "top 80%",
+      end: "bottom 80%",
+    },
   });
 }
