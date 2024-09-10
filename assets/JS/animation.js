@@ -5,8 +5,9 @@ const navList = document.querySelector(".nav__list");
 const heroTitleTopDesktop = document.querySelector(".hero__title .desktop");
 const heroTitleBottomDesktop = document.querySelector(".bottom__left");
 const cursor = document.getElementById("cursor");
-const skills = document.querySelector(".skills");
 const line = document.querySelector(".line");
+const skillsSection = document.getElementById("skills");
+const skills = skillsSection.querySelectorAll(".skill");
 
 // document.addEventListener("mousemove", (e) => {
 //   gsap.to(cursor, {
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   heroSectionAnimation();
   aboutSectionAnimation();
   lineAnimation();
-  // skillSectionAnimation();
+  skillSectionAnimation();
 });
 
 // Navigation section animation
@@ -208,28 +209,24 @@ function aboutSectionAnimation() {
 
 // Skills Section Animation
 function skillSectionAnimation() {
-  function getScrollAmount() {
-    let racesWidth = skills.scrollWidth;
-    return -(racesWidth - window.innerWidth);
-  }
+  gsap.set(skills, { opacity: 0, x: -100 });
 
-  const tween = gsap.to(skills, {
-    x: getScrollAmount,
-    duration: 3,
-    ease: "none",
-  });
-
-  ScrollTrigger.create({
-    trigger: ".skills__wrapper",
-    start: "top 20%",
-    end: () => `+=${getScrollAmount() * -1}`,
-    pin: true,
-    animation: tween,
-    scrub: 1,
-    invalidateOnRefresh: true,
+  skills.forEach((skill, index) => {
+    gsap.to(skill, {
+      opacity: 1,
+      x: 0,
+      delay: index * 0.2,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: skillsSection,
+        start: "50& 80%",
+        end: "top 80%",
+      },
+    });
   });
 }
 
+// line Animation
 function lineAnimation() {
   gsap.from(".line", {
     x: -500,
