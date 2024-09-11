@@ -385,8 +385,8 @@ span {
   position: absolute;
   content: "";
   height: 2px;
-  width: 100px;
-  right: 47%;
+  width: 80px;
+  right: 46%;
   bottom: 0;
   background-color: var(--hover-color);
   border-radius: 50px;
@@ -446,12 +446,7 @@ span {
   align-items: center;
   color: white;
   overflow: hidden;
-  /* font-weight: 600; */
-  /* font-size: 1.5em; */
-  /* text-align: center; */
   position: relative;
-  /* box-sizing: border-box; */
-  /* padding: 10px; */
 }
 
 .projects__left {
@@ -465,10 +460,13 @@ span {
   color: var(--hover-color);
   font-family: var(--font-secondary);
 }
+.project__left--title span {
+  font-size: 1.5rem;
+}
 .project__left--description {
   max-width: 500px;
   font-size: 1.6rem;
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--gray-3);
 }
 .projects.light {
@@ -485,10 +483,12 @@ span {
 .project__left--tech {
   font-size: 1.6rem;
   text-transform: uppercase;
+  line-height: 1.7;
 }
 .project__left--button {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .project__left--button a {
   font-size: 2rem;
@@ -501,6 +501,34 @@ span {
 }
 .projects__right img {
   border-radius: 10px;
+}
+.progress {
+  font-size: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.progress i {
+  font-size: 0.8rem;
+  color: var(--hover-color);
+  animation: heartbeat 3s infinite;
+}
+@keyframes heartbeat {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale(1.3);
+  }
 }
 
 /* Carousel */
@@ -523,7 +551,8 @@ span {
 .carousel-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .carousel-item.active {
@@ -551,4 +580,116 @@ span {
 
 .carousel-control.next {
   right: 0;
+}
+
+/*========== Experience Section ==========*/
+#experience {
+  background-color: var(--dark-main);
+  color: var(--gray-main);
+  overflow: hidden;
+}
+.section__experience {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.experience {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  position: relative;
+}
+.experience__left {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-basis: 500px;
+  flex-shrink: 0;
+}
+.experience__left h2 {
+  font-size: 2.5rem;
+  color: var(--gray-3);
+  font-weight: var(--font-bold);
+  letter-spacing: 1.5px;
+}
+.experience__left span {
+  /* color: var(--hover-color); */
+  font-size: 1rem;
+}
+.experience__left--left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.experience__title {
+  font-size: 1.3rem;
+  font-family: var(--font-secondary);
+  text-transform: capitalize;
+  letter-spacing: 1.1px;
+}
+.experience__time {
+  font-size: 1.3rem;
+  font-weight: var(--font-medium);
+  font-family: var(--font-secondary);
+}
+.experience__left--right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+.experience__location {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.experience__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  font-size: 1.6rem;
+  width: 50%;
+  line-height: 1.5;
+}
+/* .experience__right span {
+  color: var(--hover-color);
+  font-weight: var(--font-medium);
+} */
+
+.experience:first-of-type::after {
+  content: " ";
+  display: block;
+  height: 2px;
+  background: var(--hover-color);
+  width: 90%;
+  margin-top: 10px;
+  position: absolute;
+  bottom: -30px;
+}
+
+.experience:first-of-type {
+  margin-bottom: 40px;
+}
+
+/*========== Contact Section ==========*/
+footer {
+  background-color: var(--dark-main);
+}
+.footer__list {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: var(--gray-main);
+  gap: 5rem;
+  font-family: var(--font-secondary);
+  flex-wrap: wrap;
+}
+.footer__link {
+  transition: all 0.4s ease;
+}
+.footer__link:hover {
+  color: var(--hover-color);
 }

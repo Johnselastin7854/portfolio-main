@@ -15,6 +15,14 @@
     gap: 1rem;
   }
 }
+@media (max-width: 992px) {
+  .experience__left {
+    flex-direction: column;
+    justify-content: start;
+    gap: 0.8rem;
+    flex-shrink: 1;
+  }
+}
 
 @media (max-width: 780px) {
   .nav__list {
@@ -82,11 +90,37 @@
   .projects.light {
     flex-direction: column;
   }
+  .experience {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  .experience__left {
+    flex-basis: 0;
+  }
+  .experience__right {
+    width: 100%;
+  }
+
+  .experience:first-of-type {
+    margin-bottom: 20px;
+  }
+  .skills__heading::after {
+    width: 70px;
+    right: 45%;
+  }
 }
 
 @media (max-width: 500px) {
+  .nav__list--link {
+    font-size: 2rem;
+  }
   .carousel {
     width: 300px;
     height: 250px;
+  }
+  .skills__heading::after {
+    width: 65px;
+    right: 44%;
   }
 }
