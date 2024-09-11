@@ -105,6 +105,10 @@
   .experience:first-of-type {
     margin-bottom: 20px;
   }
+  .skills__heading::after {
+    width: 70px;
+    right: 45%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -114,5 +118,9 @@
   .carousel {
     width: 300px;
     height: 250px;
+  }
+  .skills__heading::after {
+    width: 65px;
+    right: 44%;
   }
 }
