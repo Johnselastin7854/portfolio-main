@@ -431,6 +431,7 @@ span {
 /*========== Project Section ==========*/
 #project {
   background-color: var(--dark-main);
+  padding-top: 5rem;
 }
 .dark {
   background-color: var(--dark-main);
