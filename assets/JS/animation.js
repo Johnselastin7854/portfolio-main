@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   heroSectionAnimation();
   aboutSectionAnimation();
   lineAnimation();
+  projectAnimation();
   skillSectionAnimation();
 });
 
@@ -258,4 +259,3 @@ function projectAnimation() {
     });
   });
 }
-projectAnimation();

@@ -446,12 +446,7 @@ span {
   align-items: center;
   color: white;
   overflow: hidden;
-  /* font-weight: 600; */
-  /* font-size: 1.5em; */
-  /* text-align: center; */
   position: relative;
-  /* box-sizing: border-box; */
-  /* padding: 10px; */
 }
 
 .projects__left {
@@ -551,4 +546,94 @@ span {
 
 .carousel-control.next {
   right: 0;
+}
+
+/*========== Experience Section ==========*/
+#experience {
+  background-color: var(--dark-main);
+  color: var(--gray-main);
+  overflow: hidden;
+}
+.section__experience {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.experience {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  position: relative;
+}
+.experience__left {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-basis: 500px;
+  flex-shrink: 0;
+}
+.experience__left h2 {
+  font-size: 2.5rem;
+  color: var(--gray-3);
+  font-weight: var(--font-bold);
+  letter-spacing: 1.5px;
+}
+.experience__left span {
+  /* color: var(--hover-color); */
+  font-size: 1rem;
+}
+.experience__left--left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.experience__title {
+  font-size: 1.3rem;
+  font-family: var(--font-secondary);
+  text-transform: capitalize;
+  letter-spacing: 1.1px;
+}
+.experience__time {
+  font-size: 1.3rem;
+  font-weight: var(--font-medium);
+  font-family: var(--font-secondary);
+}
+.experience__left--right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+.experience__location {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.experience__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  font-size: 1.6rem;
+  width: 50%;
+  line-height: 1.5;
+}
+/* .experience__right span {
+  color: var(--hover-color);
+  font-weight: var(--font-medium);
+} */
+
+.experience:first-of-type::after {
+  content: " ";
+  display: block;
+  height: 2px;
+  background: var(--hover-color);
+  width: 90%;
+  margin-top: 10px;
+  position: absolute;
+  bottom: -30px;
+}
+
+.experience:first-of-type {
+  margin-bottom: 40px;
 }
