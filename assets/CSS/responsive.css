@@ -109,6 +109,9 @@
     width: 70px;
     right: 45%;
   }
+  .section__about--right {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 500px) {
